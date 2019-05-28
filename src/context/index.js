@@ -1,7 +1,9 @@
-import React from "./react";
-import ThemeContext from "../2-context-theme";
+import React from "react";
+import ThemeContext from "./theme-context";
 
-function ThemeProvider({ theme, children }) {
+const defaultTheme = {};
+
+function ThemeProvider({ theme = defaultTheme, children }) {
   return (
     <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
   );

@@ -16,8 +16,8 @@ class Counter extends React.Component {
     return (
       <div>
         <h1 style={{ color }}>{this.state.count}</h1>
-        <button onClick={this.handleDecrement}>{" - "}</button>
-        <button onClick={this.handleIncrement}>{" + "}</button>
+        <button onClick={this.handleDecrement}> - </button>
+        <button onClick={this.handleIncrement}> + </button>
       </div>
     );
   }

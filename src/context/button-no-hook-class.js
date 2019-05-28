@@ -5,7 +5,8 @@ class Button extends React.Component {
   static contextType = ThemeContext;
 
   render() {
-    const { color, children } = this.props;
+    const { children } = this.props;
+    const { color } = this.context;
     return <button style={{ color }}>{children}</button>;
   }
 }

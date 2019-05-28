@@ -1,16 +1,16 @@
 import React from "react";
 import ThemeContext from "./theme-context";
 
-function Button({ color, children }) {
+function Button({ theme: { color }, children }) {
   return <button style={{ color }}>{children}</button>;
 }
 
-function ThemedButton({ children }) {
-  return (
+// HOC
+function withTheme(Component) {
+  return props => (
     <ThemeContext.Consumer>
-      {theme => <Button color={theme.primaryColor}>{children}</Button>}
+      {theme => <Component {...props} theme={theme} />}
     </ThemeContext.Consumer>
   );
 }
-
-export default ThemedButton;
+export default withTheme(Button);

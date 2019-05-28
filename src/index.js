@@ -2,24 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./styles.css";
 
-import Counter from "./1-state-class";
-// import Counter from "./1-state-hook";
-import ThemeContext from "./2-context-theme";
-import Button from "./2-context-hook";
+// import Counter from "./1-state-class";
+import Counter from "./1-state-hook";
 
-const theme = { primaryColor: "red" };
+import ThemeProvider from "./context";
+import Button from "./context/button-no-hook-function";
+// import Button from "./context/button-no-hook-class";
+// import Button from "./context/button-hook";
+
+const theme = { color: "blue" };
 
 function App() {
   return (
-    <ThemeContext.Provider value={theme}>
-      <div className="App">
-        <ThemeContext.Consumer>
-          {theme => <Counter color={theme.primaryColor} />}
-        </ThemeContext.Consumer>
-
+    <div className="App">
+      <ThemeProvider theme={theme}>
+        <Counter />
         <Button>Hello</Button>
-      </div>
-    </ThemeContext.Provider>
+      </ThemeProvider>
+    </div>
   );
 }
 

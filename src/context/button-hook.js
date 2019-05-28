@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import ThemeContext from "./theme-context";
 
 function Button({ children }) {
-  const { primaryColor: color } = useContext(ThemeContext);
+  const { color } = useContext(ThemeContext);
   return <button style={{ color }}>{children}</button>;
 }
 

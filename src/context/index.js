@@ -1,12 +1,25 @@
 import React from "react";
 import ThemeContext from "./theme-context";
+import UserContext from "./user-context";
 
-const defaultTheme = {};
+// import Button from "./button-function";
+// import Button from "./button-class";
+import Button from "./button-hook";
 
-function ThemeProvider({ theme = defaultTheme, children }) {
+const theme = { color: "blue" };
+
+const user = "mike";
+
+function App() {
   return (
-    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+    <div className="App">
+      <UserContext.Provider value={user}>
+        <ThemeContext.Provider value={theme}>
+          <Button>Hello</Button>
+        </ThemeContext.Provider>
+      </UserContext.Provider>
+    </div>
   );
 }
 
-export default ThemeProvider;
+export default App;

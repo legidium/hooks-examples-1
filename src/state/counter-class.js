@@ -12,13 +12,12 @@ class Counter extends React.Component {
   };
 
   render() {
-    const { color } = this.props;
     return (
-      <div>
-        <h1 style={{ color }}>{this.state.count}</h1>
+      <>
+        <h1>{this.state.count}</h1>
         <button onClick={this.handleDecrement}> - </button>
         <button onClick={this.handleIncrement}> + </button>
-      </div>
+      </>
     );
   }
 }
